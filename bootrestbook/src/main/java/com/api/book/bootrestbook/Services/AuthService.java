@@ -18,13 +18,13 @@ public class AuthService {
 
     public User register(User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole(Role.USER);
+        user.setRole(Role.ROLE_USER);
         return userRepo.save(user);
     }
 
     public User createAdmin(User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole(Role.ADMIN);
+        user.setRole(Role.ROLE_ADMIN);
         return userRepo.save(user);
     }
     
